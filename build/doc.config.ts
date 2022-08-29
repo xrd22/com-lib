@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   ...baseConfig,
-  base: '/pik-com',
+  base: '/MY-Pik',
   build: {
     outDir: 'docs',
   },

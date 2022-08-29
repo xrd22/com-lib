@@ -9,5 +9,7 @@
 </script>
 
 <style scoped>
-.my-foo {}
+.my-foo {
+  
+}
 </style>

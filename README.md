@@ -17,16 +17,16 @@
 
 
 [在线体验
-](https://jrainlau.github.io/pik-com/index.html#/components/Button)
+](https://jrainlau.github.io/MY-Pik/index.html#/components/Button)
 
 [Github 仓库
-](https://github.com/jrainlau/pik-com)
+](https://github.com/jrainlau/MY-Pik)
 
 [演示视频](https://user-images.githubusercontent.com/12172868/145698280-730751be-a3f8-4989-abc2-dcf467362fb1.mp4)
 
 
 ## 一、开发框架初始化
-这一套开发框架我们把它命名为 `pik-com`。在技术选型上使用的是 Vite + Vue3 + Typescript。
+这一套开发框架我们把它命名为 `MY-Pik`。在技术选型上使用的是 Vite + Vue3 + Typescript。
 
 在空白目录执行下列命令：
 
@@ -98,7 +98,7 @@ defineEmits(['click']);
 import { createApp } from 'vue'
 import App from './app.vue'
 
-import MyKit from 'pik-com'
+import MyKit from 'my-pik'
 
 createApp(App).use(MyKit)
 
@@ -107,7 +107,7 @@ createApp(App).use(MyKit)
 也允许局部调用：
 
 ```js
-import { Button } from 'pik-com'
+import { Button } from 'my-pik'
 
 Vue.component('my-button', Button)
 ```
@@ -168,9 +168,9 @@ export * from './Button';
 
 ---
 
-完成了上述组件库目录的初始化以后，此时我们的 `pik-com` 是已经可以被业务侧直接使用了。
+完成了上述组件库目录的初始化以后，此时我们的 `MY-Pik` 是已经可以被业务侧直接使用了。
 
-回到根目录下找到 `src/main.ts` 文件，我们把整个 `pik-com` 引入：
+回到根目录下找到 `src/main.ts` 文件，我们把整个 `MY-Pik` 引入：
 ```js
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -245,7 +245,7 @@ export default defineConfig({
 
 ```html
 <template>
-  <div class="pik-com-doc">
+  <div class="my-pik-doc">
     <aside>
       <router-link v-for="(link, index) in data.links" :key="index" :to="link.path">{{ link.name }}</router-link>
     </aside>
@@ -273,7 +273,7 @@ body {
   margin: 0;
   padding: 0;
 }
-.pik-com-doc {
+.my-pik-doc {
   display: flex;
   min-height: 100vh;
   aside {
@@ -300,7 +300,7 @@ body {
 完成以后就能在浏览器上看到效果了：
 ![image](https://user-images.githubusercontent.com/12172868/145666882-e80c2f35-00cb-4a32-ac4c-59e6302fc981.png)
 
-由于我们全局引入了 `pik-com`，所以里面所注册的自定义组件都可以直接在 Markdown 文件中像普通 HTML 标签一样被写入并被正确渲染。但是这里也有另一个问题，就是这些组件都是静态的无事件的，无法执行 JS 逻辑。比如当我想要实现点击按钮触发 click 事件然后弹一个告警弹窗出来，是无法直接这么写的：
+由于我们全局引入了 `MY-Pik`，所以里面所注册的自定义组件都可以直接在 Markdown 文件中像普通 HTML 标签一样被写入并被正确渲染。但是这里也有另一个问题，就是这些组件都是静态的无事件的，无法执行 JS 逻辑。比如当我想要实现点击按钮触发 click 事件然后弹一个告警弹窗出来，是无法直接这么写的：
 
 ```markdown
 # 按钮组件
@@ -415,7 +415,7 @@ if (isDev) {
 ![image](https://user-images.githubusercontent.com/12172868/145676612-0f83b2f1-40b2-4574-a8b7-7762da808130.png)
 
 
-但是这样的源码展示非常丑，只有干巴巴的字符，我们有必要给它们加个高亮。高亮的方案我选择了 PrismJS，它非常小巧又灵活，只需要引入一个相关的 CSS 主题文件，然后执行 `Prism.highlightAll()` 即可。本例所使用的 CSS 主题文件[已经放置在仓库](https://github.com/jrainlau/pik-com/blob/main/src/assets/prism.css)，可以自行取用。
+但是这样的源码展示非常丑，只有干巴巴的字符，我们有必要给它们加个高亮。高亮的方案我选择了 PrismJS，它非常小巧又灵活，只需要引入一个相关的 CSS 主题文件，然后执行 `Prism.highlightAll()` 即可。本例所使用的 CSS 主题文件[已经放置在仓库](https://github.com/jrainlau/MY-Pik/blob/main/src/assets/prism.css)，可以自行取用。
 
 回到项目，执行 `yarn add prismjs -D` 安装 PrismJS，然后在 `<Preview />` 组件中引入：
 
@@ -611,7 +611,7 @@ run()
 接下来只要执行 `yarn gen` 就可以进入交互式终端，回答问题自动完成新建组件文件、修改配置的功能，并能够在可交互式文档中实时预览效果。
 
 ## 五、分开文档和库的构建逻辑
-在默认的 Vite 配置中，执行 `yarn build` 所构建出来的产物是“可交互式文档网站”，并非“组件库”本身。为了构建一个 `pik-com` 组件库并发布到 npm，我们需要将构建的逻辑分开。
+在默认的 Vite 配置中，执行 `yarn build` 所构建出来的产物是“可交互式文档网站”，并非“组件库”本身。为了构建一个 `my-pik` 组件库并发布到 npm，我们需要将构建的逻辑分开。
 
 在根目录下添加一个 `/build` 目录，依次写入 `base.js`，`lib.js` 和 `doc.js`，分别为基础配置、库配置和文档配置。
 
@@ -659,7 +659,7 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, '../packages/index.ts'),
       name: 'MYKit',
-      fileName: (format) => `pik-com.${format}.js`,
+      fileName: (format) => `my-pik.${format}.js`,
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
@@ -718,8 +718,8 @@ copyDir('./packages', './docs');
 `build:lib` 的产物：
 ```bash
 dist
-├── pik-com.es.js
-├── pik-com.umd.js
+├── my-pik.es.js
+├── my-pik.umd.js
 ├── packages
 │   ├── Button
 │   │   ├── index.d.ts

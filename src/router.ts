@@ -18,11 +18,6 @@
     name: 'Foo',
     path: '/components/Foo',
     component: () => import('packages/Foo/docs/README.md'),
-  },{
-    title: '文本组件',
-    name: 'Text',
-    path: '/components/Text',
-    component: () => import('packages/Text/docs/README.md'),
   }];
  
  const routerConfig = {

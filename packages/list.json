@@ -10,11 +10,5 @@
     "compZhName": "测试组件",
     "compDesc": "默认：这是一个新组件",
     "compClassName": "foo"
-  },
-  {
-    "compName": "Text",
-    "compZhName": "文本组件",
-    "compDesc": "默认：这是一个新组件",
-    "compClassName": "text"
   }
 ]

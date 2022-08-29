@@ -9,13 +9,11 @@ import { App, Plugin } from 'vue';
 
 import { ButtonPlugin } from './Button';
 import { FooPlugin } from './Foo';
-import { TextPlugin } from './Text';
 
 const MYKitPlugin: Plugin = {
   install(app: App) {
     ButtonPlugin.install?.(app);
     FooPlugin.install?.(app);
-    TextPlugin.install?.(app);
   },
 };
 
@@ -23,4 +21,3 @@ export default MYKitPlugin;
 
 export * from './Button'
 export * from './Foo'
-export * from './Text'

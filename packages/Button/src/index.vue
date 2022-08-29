@@ -16,11 +16,9 @@ defineEmits(['click'])
   border: none;
   border-radius: 4px;
   color: #fff;
-
   &:active {
     background: rgb(92, 185, 243);
   }
-
   &:not(:last-child) {
     margin-right: 15px;
   }

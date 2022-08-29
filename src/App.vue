@@ -1,5 +1,5 @@
 <template>
-  <div class="pik-com-doc">
+  <div class="my-pik-doc">
     <aside>
       <router-link v-for="(link, index) in data.links" :key="index" :to="link.path">{{  link.name  }}</router-link>
     </aside>
@@ -28,7 +28,7 @@ body {
   padding: 0;
 }
 
-.pik-com-doc {
+.my-pik-doc {
   display: flex;
   min-height: 100vh;
 
